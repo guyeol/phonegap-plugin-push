@@ -55,14 +55,13 @@ public class PushHandlerActivity extends Activity implements PushConstants {
 
         if(!dismissed) {
             Log.d(LOG_TAG, "isPushPluginActive = " + isPushPluginActive);
+            Log.d(LOG_TAG, "inline" + inline);
             if (!isPushPluginActive && foreground && inline) {
                 Log.d(LOG_TAG, "forceMainActivityReload");
                 forceMainActivityReload(false);
-            } else if(startOnBackground) {
+            } else {
                 Log.d(LOG_TAG, "startOnBackgroundTrue");
                 forceMainActivityReload(true);
-            } else {
-                Log.d(LOG_TAG, "don't want main activity");
             }
         }
     }
